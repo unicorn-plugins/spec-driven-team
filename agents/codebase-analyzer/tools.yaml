@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────
+# codebase-analyzer 에이전트 도구 인터페이스 명세
+# ─────────────────────────────────────────────
+
+# 파일 시스템 접근
+file_read:
+  description: "프로젝트 설정 파일 및 소스 코드 읽기"
+  input: "파일 경로"
+  output: "파일 내용"
+
+file_list:
+  description: "디렉토리 구조 및 파일 목록 조회"
+  input: "디렉토리 경로, 필터 패턴"
+  output: "파일/디렉토리 목록"
+
+# 코드 분석
+code_search:
+  description: "코드베이스 내 심볼, 패턴, 구조 검색"
+  input: "검색 패턴, 파일 타입 필터"
+  output: "매칭 결과 목록 (파일, 라인, 컨텍스트)"
+
+code_diagnostics:
+  description: "코드 파일의 구조적 정보 및 오류 분석"
+  input: "파일 경로"
+  output: "구조 정보, 진단 결과"
+
+symbol_lookup:
+  description: "함수, 클래스, 변수 정의 조회"
+  input: "심볼 이름, 파일 경로"
+  output: "심볼 정의, 타입 정보, 문서"
+
+symbol_references:
+  description: "심볼 사용처 및 참조 관계 조회"
+  input: "심볼 이름"
+  output: "참조 목록, 의존성 그래프"
+
+# 복잡도 분석 (커스텀 도구)
+complexity_analysis:
+  description: "코드 복잡도 메트릭 계산"
+  input: "파일 경로 또는 디렉토리"
+  output: "복잡도 점수, 상세 분석 결과"
+
+# 출력 저장
+analysis_output:
+  description: "분석 결과를 JSON 파일로 저장"
+  input: "분석 데이터, 출력 경로"
+  output: "저장 완료 확인"

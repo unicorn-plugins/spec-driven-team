@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────
+# ai-app-advisor 에이전트 도구 인터페이스 명세
+# ─────────────────────────────────────────────
+
+# 파일 시스템 접근
+file_read:
+  description: "명세 파일, 분석 결과, 코드 파일 읽기"
+  input: "파일 경로"
+  output: "파일 내용"
+
+# 코드 분석
+code_search:
+  description: "의사결정 포인트, 외부 API 호출 패턴 검색"
+  input: "패턴 정규식 (if/switch/API 호출)"
+  output: "매칭된 코드 블록과 복잡도"
+
+symbol_lookup:
+  description: "함수/클래스의 시그니처 및 호출 패턴 분석"
+  input: "심볼 이름"
+  output: "파라미터, 반환값, 호출 관계"
+
+symbol_references:
+  description: "외부 API 호출 및 의존성 관계 분석"
+  input: "API 클래스/함수명"
+  output: "호출 빈도, 사용 컨텍스트"
+
+# 복잡도 분석
+complexity_analysis:
+  description: "비즈니스 로직 복잡도 계산"
+  input: "파일 또는 함수 경로"
+  output: "복잡도 점수, 분기점 수, 상태 전이 수"
+
+# AI 프레임워크 문서 검색
+framework_docs:
+  description: "AI 프레임워크 공식 문서 및 예제 검색"
+  input: "프레임워크명, 검색 키워드"
+  output: "문서 내용, 코드 예제, 활용 가이드"
+
+# 패턴 매칭
+pattern_analysis:
+  description: "AI 어플리케이션 후보 패턴 매칭"
+  input: "코드 블록, 패턴 정의"
+  output: "매칭 결과, 신뢰도 점수"
+
+# 권고 레포트 생성
+report_generation:
+  description: "분석 결과를 마크다운 레포트로 생성"
+  input: "분석 데이터, 권고 내용"
+  output: "레포트 파일 저장 완료"

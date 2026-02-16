@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────
+# spec-generator 에이전트 도구 인터페이스 명세
+# ─────────────────────────────────────────────
+
+# 파일 시스템 접근
+file_read:
+  description: "분석 결과, 코드 파일, 기존 명세 읽기"
+  input: "파일 경로"
+  output: "파일 내용"
+
+file_write:
+  description: "생성된 명세를 마크다운 파일로 저장"
+  input: "파일 경로, 명세 내용"
+  output: "저장 완료 확인"
+
+file_list:
+  description: "명세 디렉토리 구조 확인"
+  input: "디렉토리 경로"
+  output: "파일 목록"
+
+# 코드 분석
+code_diagnostics:
+  description: "코드 파일의 현재 구조 분석"
+  input: "파일 경로"
+  output: "구조 정보, 함수/클래스 목록"
+
+symbol_lookup:
+  description: "함수/클래스 시그니처 및 문서 조회"
+  input: "심볼 이름, 파일 경로"
+  output: "타입 정보, 파라미터, 반환값"
+
+symbol_references:
+  description: "심볼 사용처 분석 (의존성 파악용)"
+  input: "심볼 이름"
+  output: "참조 목록"
+
+# 패턴 분석
+code_search:
+  description: "비즈니스 로직 패턴 검색"
+  input: "패턴 정규식, 파일 타입"
+  output: "매칭된 코드 블록"
+
+# 사용자 상호작용
+user_interact:
+  description: "명세 diff 표시 및 사용자 승인 요청"
+  input: "diff 내용, 선택 옵션"
+  output: "사용자 선택 결과"
+
+# 명세 검증
+spec_validation:
+  description: "생성된 명세의 구문 및 구조 검증"
+  input: "명세 파일 경로"
+  output: "검증 결과, 오류 목록"
+
+# 변경 추적
+change_tracking:
+  description: "명세 변경 이력 기록"
+  input: "변경 내용, 타임스탬프"
+  output: "이력 기록 완료 확인"
+
+# Git 연동
+git_operations:
+  description: "명세 파일 버전 관리"
+  input: "커밋 메시지, 파일 목록"
+  output: "커밋 완료 확인"

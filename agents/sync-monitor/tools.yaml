@@ -1,0 +1,8 @@
+file_read:
+  description: "명세 및 코드 파일 비교 분석"
+file_write:
+  description: "동기화 상태 기록"
+file_list:
+  description: "파일 목록 및 수정 시각 확인"
+user_interact:
+  description: "동기화 알림 및 사용자 안내"

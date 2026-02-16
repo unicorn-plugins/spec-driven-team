@@ -1,0 +1,8 @@
+test_execution:
+  description: "테스트 스위트 실행 및 결과 분석"
+performance_benchmark:
+  description: "코드 성능 벤치마크 수행"
+code_diagnostics:
+  description: "코드 품질 메트릭 분석"
+report_generation:
+  description: "검증 결과 리포트 생성"
