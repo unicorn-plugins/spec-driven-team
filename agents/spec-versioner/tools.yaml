@@ -1,0 +1,8 @@
+file_list:
+  description: "명세 디렉토리 모니터링"
+git_operations:
+  description: "Git 변경사항 감지 및 버전 관리"
+diff_analysis:
+  description: "명세 변경 내역 분석"
+file_write:
+  description: "변경 사항 기록"

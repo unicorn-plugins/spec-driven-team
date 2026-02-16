@@ -1,0 +1,86 @@
+# ─────────────────────────────────────────────
+# MCP 서버 — 외부 도구 제공
+# ─────────────────────────────────────────────
+mcp_servers:
+  - name: context7
+    description: "AI 프레임워크 공식 문서 검색 및 코드 예시 제공 - AI 어플리케이션 권고에 필요"
+    config: mcp/context7.json
+    scope: user
+    required: true
+
+# ─────────────────────────────────────────────
+# LSP 서버 — 코드 분석 도구 제공
+#   주의: OMC 기본 제공 LSP(lsp_hover 등 12개)와 중복되지 않는
+#   플러그인 고유 언어 서버만 선언
+# ─────────────────────────────────────────────
+lsp_servers:
+  - name: python-lsp-server
+    description: "Python 코드 분석 및 인텔리전스"
+    install: "pip install python-lsp-server[all]"
+    check: "python -m pylsp --version"
+    required: true
+
+  - name: typescript-language-server
+    description: "JavaScript/TypeScript 코드 분석"
+    install: "npm install -g typescript typescript-language-server"
+    check: "typescript-language-server --version"
+    required: true
+
+  - name: rust-analyzer
+    description: "Rust 코드 분석"
+    install: "rustup component add rust-analyzer"
+    check: "rust-analyzer --version"
+    required: false
+
+# ─────────────────────────────────────────────
+# 커스텀 도구 — 플러그인 자체 구현
+# ─────────────────────────────────────────────
+custom_tools:
+  - name: spec-watcher
+    description: "명세 변경 감지 데몬 (watchdog + GitPython 기반)"
+    source: tools/customs/spec-watcher
+    required: false
+
+  - name: complexity-analyzer
+    description: "코드 복잡도 분석기 (순환 복잡도, 중첩 깊이 측정)"
+    source: tools/customs/complexity-analyzer
+    required: false
+
+  - name: spec-validator
+    description: "명세 구조 검증기 (YAML/JSON 스키마 검증)"
+    source: tools/customs/spec-validator
+    required: false
+# ─────────────────────────────────────────────
+# 추상 도구 선언 (Abstract Tools)
+# ─────────────────────────────────────────────
+abstract_tools:
+  # LSP 도구
+  - lsp_document_symbols
+  - lsp_workspace_symbols
+  - lsp_diagnostics
+  - lsp_diagnostics_directory
+  - ast_grep_search
+
+  # MCP 도구
+  - context7_resolve_library_id
+  - context7_query_docs
+
+  # 파일 도구
+  - file_read
+  - file_write
+  - file_edit
+  - file_multi_edit
+  - file_grep
+  - file_glob
+
+  # 실행 도구
+  - shell_exec
+  - python_repl
+
+# ─────────────────────────────────────────────
+# 티어 선언 (Model Tiers)
+# ─────────────────────────────────────────────
+tiers:
+  - LOW
+  - MEDIUM
+  - HIGH

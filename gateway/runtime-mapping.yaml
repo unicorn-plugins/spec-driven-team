@@ -1,0 +1,101 @@
+# ─────────────────────────────────────────────
+# 티어 → LLM 모델 매핑
+#   agentcard.yaml의 tier 값을 실제 모델에 매핑
+#   전역 기본값(default) + 에이전트별 예외
+# ─────────────────────────────────────────────
+tier_mapping:
+  default:
+    HEAVY:
+      model: "claude-opus-4-6"
+    HIGH:
+      model: "claude-opus-4-6"
+    MEDIUM:
+      model: "claude-sonnet-4-5"
+    LOW:
+      model: "claude-haiku-4-5"
+
+  # 코드 재생성은 sonnet으로 충분 (비용 절약)
+  code-regenerator:
+    MEDIUM:
+      model: "claude-sonnet-4-5"
+
+  # 명세 버전 관리는 haiku로 충분 (단순 작업)
+  spec-versioner:
+    LOW:
+      model: "claude-haiku-4-5"
+
+  # 동기화 모니터링은 haiku로 충분 (파일 비교 작업)
+  sync-monitor:
+    LOW:
+      model: "claude-haiku-4-5"
+
+# ─────────────────────────────────────────────
+# 추상 도구명 → 실제 도구 매핑
+#   tools.yaml의 도구 선언을 실제 도구에 매핑
+# ─────────────────────────────────────────────
+tool_mapping:
+  # builtin 도구(Read, Write, Bash 등)는 런타임이 내장 처리하므로 생략.
+  # 여기에는 lsp, mcp, custom 도구만 매핑함.
+
+  # ── 코드 분석 ──
+  code_search:
+    - type: lsp
+      tools: ["lsp_workspace_symbols", "lsp_document_symbols"]
+    - type: mcp
+      server: "omc-tools"
+      tools: ["ast_grep_search"]
+
+  code_diagnostics:
+    - type: lsp
+      tools: ["lsp_diagnostics", "lsp_diagnostics_directory"]
+
+  symbol_lookup:
+    - type: lsp
+      tools: ["lsp_hover", "lsp_goto_definition"]
+
+  symbol_references:
+    - type: lsp
+      tools: ["lsp_find_references"]
+
+  code_refactor:
+    - type: lsp
+      tools: ["lsp_rename", "lsp_code_actions", "lsp_code_action_resolve"]
+    - type: mcp
+      server: "omc-tools"
+      tools: ["ast_grep_replace"]
+
+  # ── AI 프레임워크 문서 검색 ──
+  framework_docs:
+    - type: mcp
+      server: "context7"
+      tools: ["resolve-library-id", "query-docs"]
+
+  # ── 커스텀 도구 ──
+  complexity_analysis:
+    - type: custom
+      source: "tools/customs/complexity-analyzer"
+      tools: ["analyze_complexity"]
+
+  spec_watch:
+    - type: custom
+      source: "tools/customs/spec-watcher"
+      tools: ["watch_specs", "detect_changes"]
+
+  spec_validation:
+    - type: custom
+      source: "tools/customs/spec-validator"
+      tools: ["validate_spec", "check_consistency"]
+
+# ─────────────────────────────────────────────
+# 액션 카테고리 → 실제 도구 매핑
+#   agentcard.yaml의 forbidden_actions를 실제 도구에 매핑
+# ─────────────────────────────────────────────
+action_mapping:
+  file_write: ["Write", "Edit", "MultiEdit"]
+  file_delete: ["Bash"]
+  code_execute: ["Bash"]
+  network_access: ["WebFetch", "WebSearch"]
+  user_interact: ["AskUserQuestion"]
+  agent_delegate: ["Task"]
+  spec_modify: ["Write", "Edit", "MultiEdit"]
+  git_commit: ["Bash"]

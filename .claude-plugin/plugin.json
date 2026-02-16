@@ -1,0 +1,12 @@
+{
+  "name": "spec-driven-team",
+  "version": "1.0.0",
+  "description": "명세-코드 양방향 동기화로 어플리케이션을 유지보수하는 팀 (Specification-Driven Development)",
+  "author": {
+    "name": "Unicorn Inc."
+  },
+  "repository": "https://github.com/unicorn-plugins/spec-driven-team",
+  "homepage": "https://github.com/unicorn-plugins/spec-driven-team",
+  "license": "MIT",
+  "keywords": ["spec-driven", "specification", "code-sync", "dmap", "multi-agent", "declarative"]
+}
