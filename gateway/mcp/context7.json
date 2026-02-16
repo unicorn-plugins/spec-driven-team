@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upwith/context7-mcp@latest"
+      ]
+    }
+  }
+}

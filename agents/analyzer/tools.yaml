@@ -1,0 +1,28 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Analyzer Tools — 필요 도구 인터페이스 명세
+# ═══════════════════════════════════════════════════════════════════════════
+
+tools:
+  - name: file_read
+    category: file
+    purpose: "소스 파일 읽기 (구조·내용 파악)"
+
+  - name: file_search
+    category: file
+    purpose: "패턴 기반 파일 검색 (grep)"
+
+  - name: lsp_workspace_symbols
+    category: lsp
+    purpose: "프로젝트 전체 심볼 검색 (함수/클래스 목록)"
+
+  - name: lsp_document_symbols
+    category: lsp
+    purpose: "파일 내 심볼 구조 파악"
+
+  - name: ast_grep_search
+    category: ast
+    purpose: "AST 기반 구조적 코드 패턴 검색"
+
+  - name: context7
+    category: mcp
+    purpose: "AI 프레임워크 공식 문서 검색 (LangChain, MCP 등)"

@@ -1,0 +1,47 @@
+# 보안 파일
+.dmap/secrets/
+*.key
+*.pem
+.env
+.env.local
+
+# 임시 파일
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 로그
+*.log
+logs/
+
+# 상태 파일 (output/는 제외하지 않음 - 공유 필요)
+.omc/state/
+.omc/logs/
+.omc/cache/

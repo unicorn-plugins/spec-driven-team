@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Runtime Mapping — 추상 선언을 구체 구현으로 변환하는 매핑 테이블
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ───────────────────────────────────────────────────────────────────────────
+# 1. 티어 매핑 (Tier Mapping)
+# ───────────────────────────────────────────────────────────────────────────
+tier_mapping:
+  LOW:
+    model: claude-3-5-haiku-20241022
+    temperature: 0.1
+    thinking_budget: low
+    description: "빠르고 저비용, 단순 작업 전용"
+
+  MEDIUM:
+    model: claude-3-5-sonnet-20241022
+    temperature: 0.3
+    thinking_budget: medium
+    description: "균형잡힌 성능, 일반 작업"
+
+  HIGH:
+    model: claude-opus-4-20250514
+    temperature: 0.5
+    thinking_budget: high
+    description: "최고 능력, 복잡한 의사결정"
+
+  HEAVY:
+    model: claude-opus-4-20250514
+    temperature: 0.3
+    thinking_budget: max
+    description: "대규모 토큰, 장시간 추론"
+
+# ───────────────────────────────────────────────────────────────────────────
+# 2. 도구 매핑 (Tool Mapping)
+# ───────────────────────────────────────────────────────────────────────────
+tool_mapping:
+  # File 카테고리
+  file_read:
+    - Read
+    - Glob
+  file_write:
+    - Write
+    - Edit
+  file_search:
+    - Grep
+
+  # Shell 카테고리
+  shell:
+    - Bash
+
+  # Web 카테고리
+  web_search:
+    - WebSearch
+  web_fetch:
+    - WebFetch
+
+  # MCP 카테고리
+  context7:
+    - mcp__context7__resolve-library-id
+    - mcp__context7__query-docs
+
+  # LSP 카테고리 (OMC 기본 제공)
+  lsp_diagnostics:
+    - mcp__omc-tools__lsp_diagnostics
+  lsp_workspace_symbols:
+    - mcp__omc-tools__lsp_workspace_symbols
+  lsp_document_symbols:
+    - mcp__omc-tools__lsp_document_symbols
+  lsp_find_references:
+    - mcp__omc-tools__lsp_find_references
+
+  # AST 카테고리 (OMC 기본 제공)
+  ast_grep_search:
+    - mcp__omc-tools__ast_grep_search
+  ast_grep_replace:
+    - mcp__omc-tools__ast_grep_replace
+
+  # Agent 카테고리
+  agent_task:
+    - Task
+
+  # UI 카테고리
+  user_question:
+    - AskUserQuestion
+
+  # Skill 카테고리
+  skill_invoke:
+    - Skill
+
+# ───────────────────────────────────────────────────────────────────────────
+# 3. 금지 액션 매핑 (Forbidden Action Mapping)
+# ───────────────────────────────────────────────────────────────────────────
+forbidden_action_mapping:
+  file_write:
+    - Write
+    - Edit
+    - mcp__filesystem__write_file
+    - mcp__filesystem__edit_file
+
+  file_delete:
+    - Bash  # rm 명령 방지
+
+  code_execution:
+    - Bash  # 위험한 셸 명령 방지
+
+  network_access:
+    - WebFetch
+    - WebSearch

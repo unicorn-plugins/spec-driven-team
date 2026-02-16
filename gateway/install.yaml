@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────
+# MCP 서버 — 외부 도구 제공
+# ─────────────────────────────────────────────
+mcp_servers:
+  - name: context7
+    description: "AI 프레임워크 공식 문서 검색 (LangChain, MCP 등)"
+    config: mcp/context7.json
+    scope: user
+    required: true
+
+# ─────────────────────────────────────────────
+# LSP 서버 — 코드 분석 도구 제공
+# 주의: OMC 기본 제공 LSP와 중복되지 않는 플러그인 고유 서버만 선언
+# ─────────────────────────────────────────────
+lsp_servers: []
+
+# ─────────────────────────────────────────────
+# 커스텀 도구 — 플러그인 자체 구현
+# ─────────────────────────────────────────────
+custom_tools:
+  - name: spec-analyzer
+    description: "AST 기반 명세화 가능 영역 분류 (선언적 로직 vs 복잡한 로직)"
+    source: tools/spec_analyzer.py
+    required: true
+
+  - name: sync-checker
+    description: "명세-코드 불일치 감지 및 diff 생성"
+    source: tools/sync_checker.py
+    required: true
+
+  - name: code-generator
+    description: "명세 기반 코드 자동 생성 (선언적 로직)"
+    source: tools/code_generator.py
+    required: true

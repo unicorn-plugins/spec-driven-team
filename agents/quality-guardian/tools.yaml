@@ -1,0 +1,20 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Quality Guardian Tools — 필요 도구 인터페이스 명세
+# ═══════════════════════════════════════════════════════════════════════════
+
+tools:
+  - name: file_read
+    category: file
+    purpose: "상태 파일 읽기 (sync-pending.json, sync-history.json)"
+
+  - name: file_write
+    category: file
+    purpose: "상태 파일 업데이트 (불일치 기록)"
+
+  - name: shell
+    category: shell
+    purpose: "테스트 실행, 성능 벤치마크"
+
+  - name: lsp_diagnostics
+    category: lsp
+    purpose: "코드 오류 감지"

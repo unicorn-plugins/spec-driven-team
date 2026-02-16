@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "spec-driven-team",
+  "owner": {
+    "name": "unicorn",
+    "email": "dev@unicorn-inc.com"
+  },
+  "plugins": [
+    {
+      "name": "spec-driven-team",
+      "source": "./",
+      "category": "development"
+    }
+  ]
+}

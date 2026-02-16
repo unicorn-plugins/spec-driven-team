@@ -1,0 +1,18 @@
+{
+  "name": "spec-driven-team",
+  "version": "1.0.0",
+  "description": "느슨한 명세-코드 양방향 동기화 (Specification-Driven Development with Loose Coupling)",
+  "author": {
+    "name": "unicorn"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/unicorn-plugins/spec-driven-team",
+  "keywords": [
+    "specification",
+    "code-generation",
+    "bidirectional-sync",
+    "reverse-sync",
+    "ai-application",
+    "maintenance"
+  ]
+}

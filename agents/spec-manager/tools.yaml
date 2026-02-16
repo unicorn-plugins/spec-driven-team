@@ -1,0 +1,24 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# Spec Manager Tools — 필요 도구 인터페이스 명세
+# ═══════════════════════════════════════════════════════════════════════════
+
+tools:
+  - name: file_read
+    category: file
+    purpose: "소스 코드 및 기존 명세 읽기"
+
+  - name: file_write
+    category: file
+    purpose: "명세 파일 작성 (specs/ 디렉토리)"
+
+  - name: file_search
+    category: file
+    purpose: "명세 파일 검색"
+
+  - name: ast_grep_search
+    category: ast
+    purpose: "코드 구조 추출 (함수 시그니처, 타입 등)"
+
+  - name: shell
+    category: shell
+    purpose: "Git 명령 실행 (버전 관리)"
