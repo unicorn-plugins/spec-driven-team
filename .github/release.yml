@@ -1,0 +1,149 @@
+# Release configuration for spec-driven-team
+# Automatically categorizes changes in GitHub releases based on PR labels and commit patterns
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+      - duplicate
+      - question
+      - invalid
+      - wontfix
+      - dependencies
+  categories:
+    - title: '🚀 주요 기능 (Major Features)'
+      labels:
+        - feature
+        - enhancement
+        - major
+        - breaking-change
+      rules:
+        - if: '$TITLE =~ /^(feat|feature)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /^(BREAKING CHANGE|breaking|major)(\(.+\))?: .+/'
+        
+    - title: '✨ 기능 개선 (Features & Improvements)'
+      labels:
+        - feature
+        - enhancement
+        - improvement
+        - new-skill
+        - new-agent
+      rules:
+        - if: '$TITLE =~ /^(feat|feature|enhance|improvement)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /스킬 추가|에이전트 추가|새 기능/'
+        - if: '$TITLE =~ /add.*skill|new.*agent|implement.*/'
+        
+    - title: '🔧 스킬 및 에이전트 (Skills & Agents)'
+      labels:
+        - skill
+        - agent
+        - workflow
+      rules:
+        - if: '$TITLE =~ /^(skill|agent|workflow)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /(analyze|generate|sync|verify|watch|setup|help).*스킬/'
+        - if: '$TITLE =~ /(codebase-analyzer|spec-generator|code-regenerator)/'
+        
+    - title: '🐛 버그 수정 (Bug Fixes)'
+      labels:
+        - bug
+        - fix
+        - hotfix
+        - patch
+      rules:
+        - if: '$TITLE =~ /^(fix|bug|hotfix|patch)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /버그 수정|오류 해결|문제 해결/'
+        
+    - title: '📚 문서 (Documentation)'
+      labels:
+        - documentation
+        - docs
+        - readme
+      rules:
+        - if: '$TITLE =~ /^(docs?|documentation)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /README|문서 업데이트|가이드/'
+        - if: '$TITLE =~ /.*\.md.*업데이트|.*\.md.*수정/'
+        
+    - title: '🔨 개발 도구 및 설정 (Development & Configuration)'
+      labels:
+        - tooling
+        - config
+        - setup
+        - gateway
+        - mcp
+      rules:
+        - if: '$TITLE =~ /^(tool|config|setup|gateway|mcp)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /설정|도구|gateway|MCP|install\.yaml/'
+        
+    - title: '🏗️ 출력 및 결과 (Output & Results)'
+      labels:
+        - output
+        - results
+        - report
+      rules:
+        - if: '$TITLE =~ /^(output|result|report)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /output\/|결과|보고서|리포트/'
+        - if: '$TITLE =~ /명세 생성 결과|sync 결과/'
+        
+    - title: '🧪 테스트 및 품질 (Testing & Quality)'
+      labels:
+        - test
+        - testing
+        - quality
+        - verification
+      rules:
+        - if: '$TITLE =~ /^(test|testing|quality|verify)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /테스트|품질|검증|회귀/'
+        
+    - title: '⚡ 성능 최적화 (Performance)'
+      labels:
+        - performance
+        - optimization
+        - perf
+      rules:
+        - if: '$TITLE =~ /^(perf|performance|optimization|optimize)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /성능|최적화|속도/'
+        
+    - title: '🔒 보안 (Security)'
+      labels:
+        - security
+        - vulnerability
+      rules:
+        - if: '$TITLE =~ /^(security|sec|vulnerability)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /보안|취약점|security/'
+        
+    - title: '♻️ 리팩토링 (Refactoring)'
+      labels:
+        - refactor
+        - cleanup
+        - code-quality
+      rules:
+        - if: '$TITLE =~ /^(refactor|cleanup|clean)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /리팩토링|정리|개선/'
+        
+    - title: '🎨 UI/UX'
+      labels:
+        - ui
+        - ux
+        - frontend
+        - design
+      rules:
+        - if: '$TITLE =~ /^(ui|ux|frontend|design)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /UI|UX|디자인|프론트엔드/'
+        
+    - title: '📦 의존성 (Dependencies)'
+      labels:
+        - dependencies
+        - deps
+        - package
+      rules:
+        - if: '$TITLE =~ /^(deps?|dependencies|package|upgrade)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /package\.json|requirements\.txt|의존성/'
+        
+    - title: '🔀 기타 변경사항 (Other Changes)'
+      labels:
+        - misc
+        - chore
+        - other
+      rules:
+        - if: '$TITLE =~ /^(chore|misc|other)(\(.+\))?: .+/'
+        - if: '$TITLE =~ /기타|잡다한|정리/'
