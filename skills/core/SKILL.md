@@ -1,6 +1,7 @@
 ---
 name: core
 description: spec-driven-team 플러그인 핵심 행동 규범
+type: core
 user-invocable: false
 ---
 

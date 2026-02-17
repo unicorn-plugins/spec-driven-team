@@ -1,9 +1,8 @@
 ---
 name: monitor-sync-status
 description: 명세-코드 동기화 상태 조회 및 불일치 파일 모니터링
-user-invocable: true
-model: haiku
-context: ["sync-monitoring", "status-check"]
+type: core
+user-invocable: false
 ---
 
 # 동기화 상태 모니터링 (Monitor Sync Status)

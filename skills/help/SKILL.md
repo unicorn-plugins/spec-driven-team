@@ -1,6 +1,7 @@
 ---
 name: help
 description: spec-driven-team 플러그인 사용 안내
+type: utility
 user-invocable: true
 ---
 
@@ -35,32 +36,49 @@ spec-driven-team 플러그인의 사용법을 사용자에게 안내함.
 
 ## 명령어
 
-| 명령 | 설명 |
-|------|------|
-| `/spec-driven-team:setup` | 초기 설정 (MCP 서버, 디렉토리 생성) |
-| `/spec-driven-team:analyze` | 코드베이스 분석 + AI 앱 권고 |
-| `/spec-driven-team:generate` | 명세 생성 (코드 → 명세) |
-| `/spec-driven-team:sync` | 양방향 동기화 (명세 ↔ 코드) |
-| `/spec-driven-team:watch` | 상태 모니터링 + 불일치 감지 |
-| `/spec-driven-team:verify` | 회귀 테스트 + 검증 |
-| `/spec-driven-team:add-ext-skill` | 외부호출 스킬 추가 |
-| `/spec-driven-team:remove-ext-skill` | 외부호출 스킬 제거 |
-| `/spec-driven-team:help` | 사용 안내 (이 메시지) |
+| 명령 | 설명 (한글) | 설명 (English) |
+|------|------------|----------------|
+| `/spec-driven-team:setup` | 초기 설정 | Initial setup |
+| `/spec-driven-team:analyze` | 코드베이스 분석 및 명세화 영역 분류 | Codebase analysis and specifiable area classification |
+| `/spec-driven-team:generate` | 코드 기반 명세 자동 생성 | Code-to-spec automatic generation |
+| `/spec-driven-team:sync` | 명세-코드 양방향 동기화 | Spec-code bidirectional synchronization |
+| `/spec-driven-team:verify` | 회귀 테스트 및 성능 비교 | Regression testing and performance comparison |
+| `/spec-driven-team:watch` | 동기화 상태 모니터링 및 불일치 감지 | Sync status monitoring and inconsistency detection |
+| `/spec-driven-team:add-ext-skill` | 외부호출 스킬 추가 | Add external skill |
+| `/spec-driven-team:remove-ext-skill` | 외부호출 스킬 제거 | Remove external skill |
+| `/spec-driven-team:help` | 사용 안내 | Usage guide |
 
 ## 워크플로우
 
-### Phase A: Explore (탐색)
+### Phase A: 탐색 (Explore)
+
+**핵심 스킬:**
+- **코드베이스 분석** (`analyze`) — 코드베이스 분석 및 명세화 영역 분류
+- **명세 생성** (`generate`) — 코드 기반 명세 자동 생성
+
+**실행:**
 1. `/spec-driven-team:analyze` - 코드 분석 + 명세화 영역 분류
 2. `/spec-driven-team:generate` - 명세 생성
 3. 사용자가 명세 검토 및 수정
 
-### Phase B: Develop (개발)
+### Phase B: 개발 (Develop)
+
+**핵심 스킬:**
+- **양방향 동기화** (`sync`) — 명세-코드 양방향 동기화
+- **검증 및 테스트** (`verify`) — 회귀 테스트 및 성능 비교
+
+**실행:**
 1. 명세 파일 수정 (specs/ 디렉토리)
 2. `/spec-driven-team:sync` - 명세 → 코드 자동 재생성
 3. `/spec-driven-team:verify` - 회귀 테스트
 
-### Phase C: Maintain (유지)
-1. `/spec-driven-team:watch` - 상태 모니터링 (백그라운드)
+### Phase C: 유지 (Maintain)
+
+**핵심 스킬:**
+- **상태 모니터링** (`watch`) — 동기화 상태 모니터링 및 불일치 감지
+
+**실행:**
+1. `/spec-driven-team:watch` - 상태 모니터링
 2. 불일치 감지 시 자동 알림
 3. `/spec-driven-team:sync` - 동기화
 

@@ -1,6 +1,7 @@
 ---
 name: remove-ext-skill
 description: 외부호출 스킬 제거 유틸리티
+type: utility
 user-invocable: true
 ---
 

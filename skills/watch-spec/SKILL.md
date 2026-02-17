@@ -1,9 +1,8 @@
 ---
 name: watch-spec
 description: 명세 디렉토리 감시 및 변경 감지 시 자동 코드 재생성 - 백그라운드 실행
-user-invocable: true
-model: sonnet
-context: ["spec-watching", "auto-sync"]
+type: core
+user-invocable: false
 ---
 
 # 명세 감시 및 자동 동기화 (Watch Spec)

@@ -1,9 +1,8 @@
 ---
 name: sync-spec
 description: 명세 기반 코드 수동 재생성 - 사용자 승인 기반 동기화
-user-invocable: true
-model: sonnet
-context: ["spec-sync", "code-generation"]
+type: core
+user-invocable: false
 ---
 
 # 명세→코드 수동 동기화 (Sync Spec)

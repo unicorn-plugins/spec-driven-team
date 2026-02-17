@@ -1,9 +1,8 @@
 ---
 name: sync-code-to-spec
 description: 코드 변경사항을 명세에 수동 반영 - 사용자 승인 기반 역동기화
-user-invocable: true
-model: sonnet
-context: ["code-sync", "spec-update"]
+type: core
+user-invocable: false
 ---
 
 # 코드→명세 수동 동기화 (Reverse Sync)

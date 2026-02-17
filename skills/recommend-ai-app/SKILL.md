@@ -1,9 +1,8 @@
 ---
 name: recommend-ai-app
 description: AI 어플리케이션 후보 식별 및 프레임워크 추천 - ROI 기준 우선순위 제공
-user-invocable: true
-model: sonnet
-context: ["ai-analysis", "framework-recommendation"]
+type: core
+user-invocable: false
 ---
 
 # AI 어플리케이션 추천 (Recommend AI App)

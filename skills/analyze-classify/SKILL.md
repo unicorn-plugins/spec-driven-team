@@ -1,9 +1,8 @@
 ---
 name: analyze-classify
 description: 코드베이스 분석 및 명세화 가능 영역 자동 분류
-user-invocable: true
-model: opus
-context: ["codebase-analysis", "classification"]
+type: core
+user-invocable: false
 ---
 
 # 코드베이스 분석 및 분류

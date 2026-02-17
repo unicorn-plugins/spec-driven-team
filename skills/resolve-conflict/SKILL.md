@@ -1,9 +1,8 @@
 ---
 name: resolve-conflict
 description: 명세-코드 불일치 해소 - 사용자 선택 기반 현행화 또는 되돌리기
-user-invocable: true
-model: sonnet
-context: ["conflict-resolution", "sync-repair"]
+type: core
+user-invocable: false
 ---
 
 # 불일치 해소 (Resolve Conflict)

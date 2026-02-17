@@ -1,6 +1,7 @@
 ---
 name: analyze
 description: 코드베이스 분석 + AI 어플리케이션 권고
+type: core
 user-invocable: true
 ---
 
@@ -58,7 +59,17 @@ user-invocable: true
 
 ### Step 4. 분석 결과 저장
 
-분석 보고서를 `.omc/reports/codebase-analysis.md`에 저장
+프로젝트 대표명 결정 (우선순위):
+1. 사용자 명시적 지정
+2. Git 저장소명
+3. package.json의 name
+4. 현재 디렉토리명
+5. 기본값: `project`
+
+분석 보고서를 `./output/{프로젝트명}/explore/` 디렉토리에 저장:
+- `analyze-result.md` (스킬 실행 요약)
+- `codebase-analysis.md` (상세 분석 보고서)
+- `ai-application-recommendations.md` (AI 권고 레포트)
 
 ### Step 5. 사용자에게 결과 보고
 
@@ -79,8 +90,8 @@ user-invocable: true
 - 3개 권고 사항 (MCP 서버 2개, LangChain 1개)
 
 📄 상세 보고서:
-- .omc/reports/codebase-analysis.md
-- .omc/reports/ai-application-recommendations.md
+- ./output/{프로젝트명}/explore/codebase-analysis.md
+- ./output/{프로젝트명}/explore/ai-application-recommendations.md
 
 다음 단계:
 /spec-driven-team:generate - 명세 생성

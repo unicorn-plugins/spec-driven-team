@@ -1,9 +1,8 @@
 ---
 name: generate-spec
 description: 분석 결과를 바탕으로 선언적 명세 자동 생성 - 스마트 알고리즘 적용
-user-invocable: true
-model: sonnet
-context: ["spec-generation", "code-analysis"]
+type: core
+user-invocable: false
 ---
 
 # 명세 자동 생성 (Generate Spec)

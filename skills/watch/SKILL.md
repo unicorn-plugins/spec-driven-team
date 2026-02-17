@@ -1,6 +1,7 @@
 ---
 name: watch
-description: 상태 모니터링 + 불일치 감지 (폴링 방식)
+description: 동기화 상태 모니터링 및 불일치 감지
+type: core
 user-invocable: true
 ---
 
@@ -36,7 +37,7 @@ user-invocable: true
   - 불일치 파일 목록 (이유 포함)
 - **MUST DO**:
   - specs/ 디렉토리와 소스 코드 타임스탬프 비교
-  - 불일치 파일을 `.omc/sync-pending.json`에 기록
+  - 불일치 파일을 `./output/{프로젝트명}/maintain/sync-pending.json`에 기록
 - **MUST NOT DO**:
   - 자동 수정하지 않음
 - **CONTEXT**:
@@ -80,9 +81,14 @@ user-invocable: true
 권장 주기: 1일 1회
 ```
 
-### Step 3. 불일치 파일 기록
+### Step 3. 결과 저장
 
-`.omc/sync-pending.json` 업데이트:
+`./output/{프로젝트명}/maintain/` 디렉토리에 저장:
+- `watch-result.md` (스킬 실행 요약)
+- `sync-pending.json` (불일치 파일 목록)
+- `drift-detection-log.json` (불일치 감지 이력)
+
+`./output/{프로젝트명}/maintain/sync-pending.json` 업데이트:
 ```json
 {
   "pending": [
@@ -100,7 +106,7 @@ user-invocable: true
 ## MUST 규칙
 
 - [ ] quality-guardian 에이전트에 위임
-- [ ] 불일치 파일을 sync-pending.json에 기록
+- [ ] 불일치 파일을 ./output/{프로젝트명}/maintain/sync-pending.json에 기록
 - [ ] 마지막 체크 시간 기록
 - [ ] 동기화 방법 안내
 

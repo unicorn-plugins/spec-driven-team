@@ -1,9 +1,8 @@
 ---
 name: verify-regenerated
 description: 재생성된 코드에 대한 회귀 테스트 및 성능 검증 - 자동 실행
-user-invocable: true
-model: sonnet
-context: ["code-verification", "testing"]
+type: core
+user-invocable: false
 ---
 
 # 재생성 코드 검증 (Verify Regenerated)

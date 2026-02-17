@@ -1,6 +1,7 @@
 ---
 name: setup
 description: spec-driven-team 플러그인 초기 설정
+type: setup
 user-invocable: true
 ---
 

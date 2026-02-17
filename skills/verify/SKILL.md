@@ -1,6 +1,7 @@
 ---
 name: verify
-description: 회귀 테스트 + 성능 비교
+description: 회귀 테스트 및 성능 비교
+type: core
 user-invocable: true
 ---
 
@@ -69,7 +70,11 @@ user-invocable: true
 
 ### Step 4. 품질 보증 보고서 생성
 
-`.omc/reports/quality-report.md` 생성
+`./output/{프로젝트명}/develop/` 디렉토리에 저장:
+- `verify-result.md` (스킬 실행 요약)
+- `quality-report.md` (품질 보증 보고서)
+- `regression-test-results.json` (테스트 결과 원본)
+- `performance-comparison.json` (성능 비교 결과)
 
 ### Step 5. 사용자에게 결과 보고
 
@@ -99,7 +104,7 @@ user-invocable: true
 | create_user | 32ms | 35ms | ⚠️ +9% |
 | validate_user | 12ms | 11ms | ✅ -8% |
 
-📄 상세 보고서: .omc/reports/quality-report.md
+📄 상세 보고서: ./output/{프로젝트명}/develop/quality-report.md
 
 권고사항:
 1. test_user_validation 테스트 업데이트

@@ -2,6 +2,7 @@
 name: add-ext-skill
 description: 외부호출 스킬 추가 유틸리티
 user-invocable: true
+type: utility
 ---
 
 # Add External Skill

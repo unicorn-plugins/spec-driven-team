@@ -1,5 +1,7 @@
 ---
-description: 명세 생성 (코드 → 명세)
+description:
+  ko: 코드 기반 명세 자동 생성
+  en: Code-to-spec automatic generation
 allowed-tools: Read, Write, Task, Skill
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: generate
-description: 명세 생성 (코드 → 명세)
+description: 코드 기반 명세 자동 생성
+type: core
 user-invocable: true
 ---
 
@@ -22,7 +23,7 @@ analyzer의 분류 결과를 기반으로 코드로부터 명세를 자동 생�
 
 ### Step 1. 분석 결과 로드
 
-`.omc/reports/codebase-analysis.md` 읽기
+`./output/{프로젝트명}/explore/codebase-analysis.md` 읽기
 
 분석 결과가 없으면:
 ```
@@ -52,7 +53,7 @@ analyzer의 분류 결과를 기반으로 코드로부터 명세를 자동 생�
   - 코드 수정 금지
   - 복잡한 로직 완전 명세화 시도하지 않음
 - **CONTEXT**:
-  - 분석 보고서: `.omc/reports/codebase-analysis.md`
+  - 분석 보고서: `./output/{프로젝트명}/explore/codebase-analysis.md`
   - 프로젝트 구조
 
 ### Step 4. 명세 검증 → Agent: spec-manager
@@ -66,7 +67,13 @@ analyzer의 분류 결과를 기반으로 코드로부터 명세를 자동 생�
   - 자동 수정하지 않음 (사용자 확인 필요)
 - **CONTEXT**: 생성된 명세 파일 목록
 
-### Step 5. 사용자에게 결과 보고
+### Step 5. 결과 저장
+
+생성 결과를 `./output/{프로젝트명}/explore/` 디렉토리에 저장:
+- `generate-result.md` (스킬 실행 요약)
+- `specs/` (생성된 명세 파일들)
+
+### Step 6. 사용자에게 결과 보고
 
 생성 결과 요약 출력:
 ```

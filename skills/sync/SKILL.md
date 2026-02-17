@@ -1,6 +1,7 @@
 ---
 name: sync
-description: 양방향 동기화 (명세 ↔ 코드)
+description: 명세-코드 양방향 동기화
+type: core
 user-invocable: true
 ---
 
@@ -31,7 +32,7 @@ user-invocable: true
 
 #### 2-A-1. 명세 변경 감지
 
-`.omc/sync-pending.json`에서 "명세 변경, 코드 미변경" 파일 목록 로드
+`./output/{프로젝트명}/maintain/sync-pending.json`에서 "명세 변경, 코드 미변경" 파일 목록 로드
 
 #### 2-A-2. 코드 재생성 → Agent: code-generator
 
@@ -66,7 +67,7 @@ user-invocable: true
 
 #### 2-B-1. 코드 변경 감지
 
-`.omc/sync-pending.json`에서 "코드 변경, 명세 미변경" 파일 목록 로드
+`./output/{프로젝트명}/maintain/sync-pending.json`에서 "코드 변경, 명세 미변경" 파일 목록 로드
 
 #### 2-B-2. 명세 현행화 → Agent: spec-manager
 
@@ -95,7 +96,7 @@ user-invocable: true
 
 ### Step 3. 동기화 상태 업데이트
 
-`.omc/sync-pending.json` 초기화:
+`./output/{프로젝트명}/maintain/sync-pending.json` 초기화:
 ```json
 {
   "pending": [],
@@ -103,7 +104,7 @@ user-invocable: true
 }
 ```
 
-`.omc/sync-history.json` 업데이트:
+`./output/{프로젝트명}/maintain/sync-history.json` 업데이트:
 ```json
 {
   "history": [
@@ -118,7 +119,14 @@ user-invocable: true
 }
 ```
 
-### Step 4. 사용자에게 결과 보고
+### Step 4. 결과 저장
+
+동기화 결과를 `./output/{프로젝트명}/develop/` 디렉토리에 저장:
+- `sync-result.md` (스킬 실행 요약)
+- `sync-report.md` (상세 동기화 보고서)
+- `backups/` (백업 파일들)
+
+### Step 5. 사용자에게 결과 보고
 
 동기화 결과 요약 출력:
 ```
