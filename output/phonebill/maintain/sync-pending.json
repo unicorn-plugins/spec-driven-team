@@ -1,0 +1,83 @@
+{
+    "specs": [
+        {
+            "name": "repository-crud-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/repository/BillInquiryHistoryRepository.java"
+            ]
+        },
+        {
+            "name": "entity-dto-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/dto/",
+                "bill-service/src/main/java/com/phonebill/bill/repository/entity/BillInquiryHistoryEntity.java"
+            ]
+        },
+        {
+            "name": "rest-api-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "api-gateway/src/main/java/com/unicorn/phonebill/gateway/controller/HealthController.java",
+                "bill-service/src/main/java/com/phonebill/bill/controller/BillController.java"
+            ]
+        },
+        {
+            "name": "validation-service-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "common/src/main/java/com/phonebill/common/util/ValidatorUtil.java",
+                "common/src/main/java/com/phonebill/common/exception/ValidationException.java"
+            ]
+        },
+        {
+            "name": "cache-service-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/service/BillCacheService.java"
+            ]
+        },
+        {
+            "name": "configuration-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/config/",
+                "api-gateway/src/main/java/com/unicorn/phonebill/gateway/config/"
+            ]
+        },
+        {
+            "name": "jwt-token-skeleton-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "common/src/main/java/com/phonebill/common/security/JwtTokenProvider.java",
+                "common/src/main/java/com/phonebill/common/security/JwtAuthenticationFilter.java",
+                "api-gateway/src/main/java/com/unicorn/phonebill/gateway/service/JwtTokenService.java"
+            ]
+        },
+        {
+            "name": "kos-integration-skeleton-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/external/KosRequest.java",
+                "bill-service/src/main/java/com/phonebill/bill/external/KosResponse.java",
+                "bill-service/src/main/java/com/phonebill/bill/service/KosClientService.java"
+            ]
+        },
+        {
+            "name": "resilience-gateway-skeleton-spec.md",
+            "status": "synced",
+            "matching_files": [
+                "bill-service/src/main/java/com/phonebill/bill/config/CircuitBreakerConfig.java",
+                "bill-service/src/main/java/com/phonebill/bill/exception/CircuitBreakerException.java"
+            ]
+        }
+    ],
+    "summary": {
+        "total_specs": 9,
+        "synced_specs": 9,
+        "spec_only": 0,
+        "code_only": 0,
+        "sync_percentage": 100
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "project_name": "phonebill",
+    "source_path": "~/workspace/phonebill",
+    "spec_path": "output/phonebill/specs",
+    "output_path": "output/phonebill",
+    "description": "Phone bill management service (Spring Boot multi-module)"
+}
