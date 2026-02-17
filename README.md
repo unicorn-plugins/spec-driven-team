@@ -82,7 +82,7 @@ claude plugin list
 
 ```bash
 # 마켓플레이스 업데이트 (최신 커밋 반영)
-claude plugin marketplace update unicorn-plugins
+claude plugin marketplace update spec-driven-team
 
 # 플러그인 재설치
 claude plugin update spec-driven-team@spec-driven-team
