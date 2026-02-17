@@ -42,7 +42,7 @@ Spec-Driven Team은 명세와 코드 간 양방향 동기화를 통해 일관성
 claude plugin marketplace add unicorn-plugins/spec-driven-team
 
 # 2. 플러그인 설치
-claude plugin install spec-driven-team@unicorn-plugins
+claude plugin install spec-driven-team@spec-driven-team
 
 # 3. 설치 확인
 claude plugin list
@@ -55,7 +55,7 @@ claude plugin list
 claude plugin marketplace add ~/workspace/spec-driven-team
 
 # 2. 플러그인 설치
-claude plugin install spec-driven-team@local
+claude plugin install spec-driven-team@spec-driven-team
 
 # 3. 설치 확인
 claude plugin list
