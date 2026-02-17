@@ -1,0 +1,251 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1771283701244,
+  "projectRoot": "C:\\Users\\hiond\\workspace\\spec-driven-team",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "agents": {
+      "path": "agents",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1771283701233,
+      "keyFiles": []
+    },
+    "commands": {
+      "path": "commands",
+      "purpose": null,
+      "fileCount": 18,
+      "lastAccessed": 1771283701233,
+      "keyFiles": [
+        "add-ext-skill.md",
+        "analyze-classify.md",
+        "analyze.md",
+        "generate-spec.md",
+        "generate.md"
+      ]
+    },
+    "gateway": {
+      "path": "gateway",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1771283701233,
+      "keyFiles": [
+        "install.yaml",
+        "runtime-mapping.yaml"
+      ]
+    },
+    "output": {
+      "path": "output",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1771283701234,
+      "keyFiles": []
+    },
+    "resources": {
+      "path": "resources",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1771283701234,
+      "keyFiles": [
+        "resource.md"
+      ]
+    },
+    "skills": {
+      "path": "skills",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1771283701234,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "README.md",
+      "accessCount": 4,
+      "lastAccessed": 1771290420083,
+      "type": "file"
+    },
+    {
+      "path": "skills\\core\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290172826,
+      "type": "file"
+    },
+    {
+      "path": "skills\\setup\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290173079,
+      "type": "file"
+    },
+    {
+      "path": "skills\\help\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290173251,
+      "type": "file"
+    },
+    {
+      "path": "skills\\add-ext-skill\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290173474,
+      "type": "file"
+    },
+    {
+      "path": "skills\\remove-ext-skill\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290173707,
+      "type": "file"
+    },
+    {
+      "path": "skills\\analyze\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290173883,
+      "type": "file"
+    },
+    {
+      "path": "skills\\generate\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290174111,
+      "type": "file"
+    },
+    {
+      "path": "skills\\sync\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290174288,
+      "type": "file"
+    },
+    {
+      "path": "skills\\watch\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290174548,
+      "type": "file"
+    },
+    {
+      "path": "skills\\verify\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290174708,
+      "type": "file"
+    },
+    {
+      "path": "skills\\sync-code-to-spec\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290177564,
+      "type": "file"
+    },
+    {
+      "path": "skills\\monitor-sync-status\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290177827,
+      "type": "file"
+    },
+    {
+      "path": "skills\\recommend-ai-app\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290178095,
+      "type": "file"
+    },
+    {
+      "path": "skills\\resolve-conflict\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290178315,
+      "type": "file"
+    },
+    {
+      "path": "skills\\verify-regenerated\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290178659,
+      "type": "file"
+    },
+    {
+      "path": "skills\\watch-spec\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290178867,
+      "type": "file"
+    },
+    {
+      "path": "skills\\generate-spec\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290179112,
+      "type": "file"
+    },
+    {
+      "path": "skills\\sync-spec\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290179359,
+      "type": "file"
+    },
+    {
+      "path": "skills\\analyze-classify\\SKILL.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290179612,
+      "type": "file"
+    },
+    {
+      "path": ".claude-plugin\\plugin.json",
+      "accessCount": 1,
+      "lastAccessed": 1771290183354,
+      "type": "file"
+    },
+    {
+      "path": "gateway\\install.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1771290183933,
+      "type": "file"
+    },
+    {
+      "path": "gateway\\runtime-mapping.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1771290184139,
+      "type": "file"
+    },
+    {
+      "path": "requirements.md",
+      "accessCount": 1,
+      "lastAccessed": 1771290184216,
+      "type": "file"
+    },
+    {
+      "path": "agents\\analyzer\\agentcard.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1771290187693,
+      "type": "file"
+    },
+    {
+      "path": "agents\\spec-manager\\agentcard.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1771290187978,
+      "type": "file"
+    },
+    {
+      "path": "agents\\code-generator\\agentcard.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1771290188166,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

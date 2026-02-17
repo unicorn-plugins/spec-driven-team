@@ -21,9 +21,27 @@ user-invocable: true
 
 ## 워크플로우
 
-### Step 1. 검증 대상 확인
+### Step 1. 프로젝트 선택
 
-{tool:AskUserQuestion}으로 검증 대상 선택:
+`output/` 디렉토리 하위에서 `project-config.json`이 존재하는 프로젝트 목록을 탐색:
+```
+output/{project_name}/maintain/project-config.json
+```
+
+탐색된 프로젝트 목록에 "신규 프로젝트 (직접 입력)" 옵션을 추가하여
+{tool:AskUserQuestion}으로 사용자에게 제시.
+
+**기존 프로젝트 선택 시:**
+- 선택된 프로젝트의 `project-config.json`을 읽어 `source_path` 획득
+- `source_path`를 프로젝트 루트 경로로 사용
+
+**신규 프로젝트 선택 시:**
+- {tool:AskUserQuestion}으로 프로젝트 루트 경로를 직접 입력받음
+- 입력받은 경로를 프로젝트 루트 경로로 사용
+
+### Step 1-2. 검증 대상 확인
+
+{tool:AskUserQuestion}으로 검증 범위 선택:
 - 전체 테스트
 - 특정 디렉토리 (예: `tests/api/`)
 - 특정 파일 목록

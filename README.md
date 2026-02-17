@@ -87,8 +87,6 @@ claude plugin marketplace update spec-driven-team
 # 플러그인 재설치
 claude plugin update spec-driven-team@spec-driven-team
 
-# setup 재실행 (새 도구 설치)
-/spec-driven-team:setup
 ```
 
 

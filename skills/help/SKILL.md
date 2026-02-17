@@ -46,6 +46,8 @@ spec-driven-team 플러그인의 사용법을 사용자에게 안내함.
 | `/spec-driven-team:watch` | 동기화 상태 모니터링 및 불일치 감지 | Sync status monitoring and inconsistency detection |
 | `/spec-driven-team:add-ext-skill` | 외부호출 스킬 추가 | Add external skill |
 | `/spec-driven-team:remove-ext-skill` | 외부호출 스킬 제거 | Remove external skill |
+| `/spec-driven-team:ext-github-release-manager` | github-release-manager 외부호출 | github-release-manager external call |
+| `/spec-driven-team:ext-abra` | abra 외부호출 | abra external call |
 | `/spec-driven-team:help` | 사용 안내 | Usage guide |
 
 ## 워크플로우
