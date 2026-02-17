@@ -80,35 +80,17 @@ claude plugin list
 
 ## 업그레이드
 
-### Git Repository 마켓플레이스
-
 ```bash
 # 마켓플레이스 업데이트 (최신 커밋 반영)
 claude plugin marketplace update unicorn-plugins
 
 # 플러그인 재설치
-claude plugin install spec-driven-team@unicorn-plugins
+claude plugin update spec-driven-team@spec-driven-team
 
 # setup 재실행 (새 도구 설치)
 /spec-driven-team:setup
 ```
 
-### 로컬 마켓플레이스
-
-```bash
-# 1. 로컬 플러그인 소스 갱신
-cd ~/workspace/spec-driven-team
-git pull origin main
-
-# 2. 마켓플레이스 업데이트
-claude plugin marketplace update local
-
-# 3. 플러그인 재설치
-claude plugin install spec-driven-team@local
-
-# 4. setup 재실행
-/spec-driven-team:setup
-```
 
 ---
 
