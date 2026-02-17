@@ -34,7 +34,9 @@
     "userId": "string",
     "customerId": "string",
     "lineNumber": "string",
-    "userName": "string"
+    "userName": "string",
+    "corp": "unicorn"
+
   }
 }
 ```

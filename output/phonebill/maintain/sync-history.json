@@ -1,0 +1,37 @@
+{
+    "history": [
+        {
+            "timestamp": "2026-02-17T09:00:00Z",
+            "direction": "spec_to_code",
+            "spec_file": "rest-api-spec.md",
+            "changed_files": [
+                "bill-service/src/main/java/com/phonebill/bill/controller/BillController.java",
+                "bill-service/src/main/java/com/phonebill/bill/dto/BillStatusResponse.java",
+                "bill-service/src/main/java/com/phonebill/bill/service/BillInquiryService.java",
+                "bill-service/src/main/java/com/phonebill/bill/service/BillInquiryServiceImpl.java",
+                "bill-service/src/main/java/com/phonebill/bill/service/BillHistoryService.java"
+            ],
+            "changes": [
+                "GET /api/v1/bills/status/{requestId} 엔드포인트 신규 추가 (UFR-BILL-030)",
+                "GET /api/v1/bills/history 파라미터 수정: page(0부터), size(최대100), sort 추가",
+                "BillStatusResponse DTO에 progress, result 필드 추가",
+                "BillInquiryService 인터페이스에 getBillStatus, getBillHistory(page,size,sort) 추가",
+                "BillInquiryServiceImpl getBillStatus 구현 (진행률 계산 포함)",
+                "BillHistoryService getBillInquiryResult TODO 구현 (resultSummary 파싱 → BillInfo 구성)"
+            ],
+            "test_result": {
+                "total": 9,
+                "passed": 9,
+                "failed": 0,
+                "test_files": [
+                    "bill-service/src/test/java/com/phonebill/bill/service/BillInquiryServiceImplTest.java",
+                    "bill-service/src/test/java/com/phonebill/bill/service/BillHistoryServiceTest.java"
+                ]
+            },
+            "backup": "bill-service/src/main/java/com/phonebill/bill/controller/BillController.java.backup",
+            "build_result": "SUCCESS",
+            "success": true
+        }
+    ],
+    "total_syncs": 1
+}

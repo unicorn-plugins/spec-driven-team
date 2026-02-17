@@ -45,3 +45,6 @@ logs/
 .omc/state/
 .omc/logs/
 .omc/cache/
+
+# 기타
+.dmap/
